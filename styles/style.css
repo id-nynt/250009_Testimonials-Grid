@@ -85,6 +85,20 @@ main {
 #daniel .avatar-name img {
   border: 2px solid hsl(264, 82%, 80%);
 }
+#daniel .bg-decor {
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  right: 10%;
+}
+#daniel .bg-decor img {
+  width: 120px;
+  height: 120px;
+}
+#daniel h1, #daniel h2, #daniel h3, #daniel p {
+  position: relative;
+  z-index: 1;
+}
 
 #jonathan {
   background-color: hsl(217, 19%, 35%);
@@ -151,20 +165,6 @@ main {
   }
   #daniel {
     grid-column: span 2;
-  }
-  #daniel .bg-decor {
-    position: absolute;
-    z-index: 0;
-    top: 0px;
-    right: 60px;
-  }
-  #daniel .bg-decor img {
-    width: 120px;
-    height: 120px;
-  }
-  #daniel h3, #daniel p {
-    position: relative;
-    z-index: 1;
   }
   #kira {
     grid-row: span 2;

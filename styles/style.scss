@@ -100,6 +100,20 @@ main {
 }
 #daniel {
     @include comment-color($purple-dark, $purple-medium, $purple-light);
+    .bg-decor {
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        right: 10%;
+        img {
+            width: 120px;
+            height: 120px;
+        }    
+    }
+    h1, h2, h3, p {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 #jonathan {
@@ -150,20 +164,6 @@ main {
     }
     #daniel {
         grid-column: span 2;
-        .bg-decor {
-            position: absolute;
-            z-index: 0;
-            top: 0px;
-            right: 60px;
-            img {
-                width: 120px;
-                height: 120px;
-            }    
-        }
-        h3, p {
-            position: relative;
-            z-index: 1;
-        }
     }
     #kira {
         grid-row: span 2;
