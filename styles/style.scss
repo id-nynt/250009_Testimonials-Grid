@@ -1,0 +1,158 @@
+/*VARIABLE
+-------------------------------------*/
+$background: hsl(214, 17%, 92%);
+$purple-dark: hsl(263, 55%, 52%);
+$purple-medium: hsl(264, 82%, 80%);
+$purple-light: hsl(260, 100%, 95%);
+
+$Grey100: hsl(214, 17%, 92%);
+$Grey200: hsl(0, 0%, 81%);
+$Grey400: hsl(224, 10%, 45%);
+$Grey500: hsl(217, 19%, 35%);
+$DarkBlue: hsl(219, 29%, 14%);
+$Black: hsl(0, 0%, 7%);
+
+/*FUNCTIONS
+-------------------------------------*/
+@mixin comment-color($bg-color, $border-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    .avatar-name {
+        img {
+            border: 2px solid $border-color;
+        }
+    }
+}
+/*OVERALL
+--------------------------------------*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $background;
+    font-family: "Barlow Semi Condensed", serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 80px 30px;
+}
+
+/*COMMENTS
+--------------------------------------*/
+.comment {
+    padding: 35px;
+    border-radius: 5px;
+    box-shadow: 30px 50px 30px rgb(190, 190, 190);
+    .avatar-name {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        align-items: center;
+        
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-style: solid;
+            border-width: 2px;
+        }
+        h1 {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 0;
+            margin-bottom: 2px;
+        }
+        h2 {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    p {
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin-bottom: 0;
+    }
+}
+#daniel {
+    @include comment-color($purple-dark, $purple-medium, $purple-light);
+}
+
+#jonathan {
+    @include comment-color($Grey500, $Grey200, $Grey100);
+}
+
+#jeanette {
+    @include comment-color(white, $Grey100, $Grey500);
+}
+
+#patrick {
+    @include comment-color($DarkBlue, $purple-medium, $Grey200)
+}
+
+#kira {
+    @include comment-color(white, $Grey100, $Grey500);
+}
+
+/*FOOTER
+--------------------------------------*/
+.attribution {
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    color: $Grey500;
+    a {
+        text-decoration: none;
+        font-weight: 600;
+        color: $DarkBlue;
+        &:hover {
+            color: $purple-dark;
+        }
+    }
+}
+
+/*MEDIA QUERIES FOR DESKTOP
+--------------------------------------*/
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(300px, auto);
+        max-width: 1120px;
+        column-gap: 30px;
+        row-gap: 25px;
+    }
+    #daniel {
+        grid-column: span 2;
+    }
+    #kira {
+        grid-row: span 2;
+    }
+    #patrick {
+        grid-column: span 2;
+    }
+}
+   
