@@ -38,8 +38,11 @@ main {
 --------------------------------------*/
 .comment {
   padding: 35px;
-  border-radius: 5px;
-  box-shadow: 30px 50px 30px rgb(190, 190, 190);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 30px 50px 30px rgba(0, 0, 0, 0.15);
 }
 .comment .avatar-name {
   display: grid;
@@ -148,6 +151,20 @@ main {
   }
   #daniel {
     grid-column: span 2;
+  }
+  #daniel .bg-decor {
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    right: 60px;
+  }
+  #daniel .bg-decor img {
+    width: 120px;
+    height: 120px;
+  }
+  #daniel h3, #daniel p {
+    position: relative;
+    z-index: 1;
   }
   #kira {
     grid-row: span 2;
